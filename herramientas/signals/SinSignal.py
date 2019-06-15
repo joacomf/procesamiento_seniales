@@ -30,3 +30,7 @@ class SinSignal(Signal):
 
 		plot.plot(time_collection, self.values)
 		plot.show()
+
+	def graph_only(self, time_collection):
+		plot.plot(time_collection, self.values)
+		plot.show()

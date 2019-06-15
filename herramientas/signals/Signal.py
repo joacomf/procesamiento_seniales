@@ -44,6 +44,9 @@ class Signal:
 
 		return total_energy
 
+	def get_values(self):
+		return self.values
+
 	def value_at(self, time):
 		pass
 
