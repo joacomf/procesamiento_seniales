@@ -9,11 +9,12 @@ from herramientas.ReflexFunction import ReflexFunction
 
 class SquareSignalGenerator:
 
-    def __init__(self, n=0, fs=101):
+    def __init__(self, n=0, init=0, to=1, fs=101):
+        self.values = []
         self.summatory = []
         self.n = n
         self.fs = fs
-        self.time = numpy.linspace(0, 1, fs, endpoint=False).tolist()
+        self.time = numpy.linspace(init, to, fs, endpoint=False).tolist()
 
     def generate(self):
         summatory = numpy.zeros(self.fs)
@@ -27,6 +28,7 @@ class SquareSignalGenerator:
             summatory += result
 
         self.summatory = summatory
+        self.values = summatory
 
         return summatory
 
