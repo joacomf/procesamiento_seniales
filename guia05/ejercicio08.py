@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plot
 import numpy
 
-from herramientas.signals.SinSignal import SinSignal
 from herramientas.transforms.FourierTransform import FourierTransform
 from herramientas.transforms.FourierUtils import FourierUtils
 from herramientas.signals.SquareSignalGenerator import SquareSignalGenerator
