@@ -27,6 +27,7 @@ class FourierAntiTransform:
             result.append(partial)
 
         self.values = numpy.array(result)
+        # self.values = (numpy.fft.fft((-1 * values)/(2 * numpy.pi * samples)))
 
         return self.values
 
