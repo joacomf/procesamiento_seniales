@@ -12,7 +12,7 @@ def modulate(time, incoming_signal):
 
 
 def demodulate(time, incoming_signal):
-    demodulated = incoming_signal /   portadora
+    demodulated = incoming_signal / portadora
 
     return demodulated
 
