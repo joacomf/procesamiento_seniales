@@ -2,9 +2,10 @@
 
 import matplotlib.pyplot as plot
 import numpy
+from scipy.fftpack import fft, ifft
 
 t = numpy.linspace(0, 10, 1000)
-portadora = numpy.cos(2 * numpy.pi * t)
+portadora = numpy.cos(10 * numpy.pi * t)
 
 
 def modulate(incoming_signal):
@@ -14,11 +15,13 @@ def modulate(incoming_signal):
 
 
 def demodulate(incoming_signal):
-    signal = numpy.fft.fft((incoming_signal * portadora))
-    ventaneo = box_window(len(signal), 50, 90, 1) * signal + box_window(len(signal), len(signal) - 90, len(signal) - 60, 1) * signal
-    demodulated = numpy.fft.ifft(ventaneo * signal)
+    signal = fft(incoming_signal * portadora)
 
-    return [demodulated, signal]
+    # box = fft(2 * numpy.sinc(2 * numpy.pi * t))
+    box = box_window(len(incoming_signal), 0, 60, 2) + box_window(len(incoming_signal), len(incoming_signal)-40, len(incoming_signal), 2)
+    demodulated = ifft(box * signal)
+
+    return [signal, box]
 
 
 def box_window(total, init, to, multiplier=1):
@@ -29,9 +32,7 @@ def box_window(total, init, to, multiplier=1):
     return box
 
 
-print(box_window(50, 10, 15))
-
-message = numpy.sin(20 * numpy.pi * t)
+message = numpy.cos(2 * numpy.pi * t)
 
 modulated_signal = modulate(message)
 demodulated_signal = demodulate(modulated_signal)
