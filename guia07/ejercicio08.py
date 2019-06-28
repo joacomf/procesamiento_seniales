@@ -103,7 +103,7 @@ subplot[2][1].plot(t2, window_tft_centered(abs(hamming_ft)))
 subplot[2][1].title.set_text("Transformada Ventana Hamming")
 
 subplot[2][2].plot(t2, window_tft_centered(hamming_dbs))
-subplot[2][2].title.set_text("Transformada Ventana Triangular dBs")
+subplot[2][2].title.set_text("Transformada Ventana Hamming dBs")
 
 subplot[2][3].plot(t2, window_tft_centered(abs(hamming_phase)))
 subplot[2][3].title.set_text("Fase Ventana Hamming")
