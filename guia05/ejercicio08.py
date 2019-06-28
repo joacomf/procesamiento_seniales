@@ -17,7 +17,7 @@ ft = fourier.calculate()
 
 utils = FourierUtils(signal_values=signal, transform_values=ft)
 parserval = utils.parseval_relationship_maintains()
-print("Se cumple relación de Parserval:" + str(parserval))
+print("Se cumple relación de Parserval: " + str(parserval))
 
 _, subplot = plot.subplots(2, 1)
 
