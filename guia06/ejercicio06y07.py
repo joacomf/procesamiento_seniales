@@ -21,7 +21,7 @@ def demodulate(incoming_signal):
     box = box_window(len(incoming_signal), 0, 60, 2) + box_window(len(incoming_signal), len(incoming_signal)-40, len(incoming_signal), 2)
     demodulated = ifft(box * signal)
 
-    return [signal, box]
+    return demodulated
 
 
 def box_window(total, init, to, multiplier=1):
@@ -37,7 +37,7 @@ message = numpy.cos(2 * numpy.pi * t)
 modulated_signal = modulate(message)
 demodulated_signal = demodulate(modulated_signal)
 
-_, subplot = plot.subplots(5, 1)
+_, subplot = plot.subplots(4, 1)
 
 subplot[0].plot(t, portadora)
 subplot[0].title.set_text("Señal portadora")
@@ -48,10 +48,8 @@ subplot[1].title.set_text("Señal moduladora")
 subplot[2].plot(t, modulated_signal)
 subplot[2].title.set_text("Señal modulada")
 
-subplot[3].plot(t, demodulated_signal[0])
+subplot[3].plot(t, demodulated_signal)
 subplot[3].title.set_text("Señal demodulada")
-subplot[4].plot(t, demodulated_signal[1])
-subplot[4].title.set_text("Señal demodulada")
 
 subplot[0].grid()
 subplot[1].grid()

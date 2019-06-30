@@ -81,7 +81,7 @@ subplot[0][1].title.set_text("Transformada Ventana Rectangular")
 subplot[0][2].plot(t2, window_tft_centered(box_dbs))
 subplot[0][2].title.set_text("Transformada Ventana Rectangular dBs")
 
-subplot[0][3].plot(t2, window_tft_centered(abs(box_phase)))
+subplot[0][3].plot(t2, window_tft_centered(box_phase))
 subplot[0][3].title.set_text("Fase Ventana Rectangular")
 
 subplot[1][0].stem(t, triangle)
@@ -93,7 +93,7 @@ subplot[1][1].title.set_text("Transformada Ventana Triangular")
 subplot[1][2].plot(t2, window_tft_centered(triangle_dbs))
 subplot[1][2].title.set_text("Transformada Ventana Triangular dBs")
 
-subplot[1][3].plot(t2, window_tft_centered(abs(triangle_phase)))
+subplot[1][3].plot(t2, window_tft_centered(triangle_phase))
 subplot[1][3].title.set_text("Fase ventana Triangular")
 
 subplot[2][0].stem(t, hamming)
@@ -105,7 +105,7 @@ subplot[2][1].title.set_text("Transformada Ventana Hamming")
 subplot[2][2].plot(t2, window_tft_centered(hamming_dbs))
 subplot[2][2].title.set_text("Transformada Ventana Hamming dBs")
 
-subplot[2][3].plot(t2, window_tft_centered(abs(hamming_phase)))
+subplot[2][3].plot(t2, window_tft_centered(hamming_phase))
 subplot[2][3].title.set_text("Fase Ventana Hamming")
 
 plot.show()
